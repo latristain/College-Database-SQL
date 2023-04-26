@@ -25,5 +25,5 @@ To run this project, it is recommended that the tools specified in section 2 be 
 ### Project
 This project consists of 1 module.
 
-MMA.sql -- This module the structure of the different tables is created and the data is loaded. 
+In ths module the structure of the different tables are created and the data is loaded. 
 

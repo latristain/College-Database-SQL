@@ -1,0 +1,186 @@
+/******************************************************************************
+Beginning ---- Course Database is created and its tables
+********************************************************************************/
+
+/*Course Database is created */
+CREATE DATABASE Database_Course;
+
+/*Table Course_Module_Information inside Database Course is created with its characteristics */
+create TABLE Database_Course.Course_Module_Information (
+    id_course 		numeric(5),
+    Module_Offered  numeric(2)
+);
+
+/*Table Course_Name_Information inside Database Course is created with its characteristics */
+create TABLE Database_Course.Course_Name_Information (
+    id_course 		numeric(5),
+    Course_Na_me    CHARACTER(32)
+);
+
+
+/*Table Course_Days_Offered inside Database Course is created with its characteristics */
+create TABLE Database_Course.Course_Days_Offered (
+    id_course 		numeric(5),
+    Days_Offered    CHARACTER(32)
+);
+
+/*The data is loaded via a txt file into the table Course_Name_Information inside the database Database_Course*/
+load data LOCAL 
+infile "C:/Users/esmer/OneDrive/Desktop/Liverpool/InformationDatabases/Week5/MidModuleAssigment/DataBases/Course_Name_Information.txt"
+INTO TABLE Database_Course.Course_Name_Information
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+/*The data is loaded via a txt file into the table Course_Days_Offered inside the database Database_Course*/
+load data LOCAL 
+infile "C:/Users/esmer/OneDrive/Desktop/Liverpool/InformationDatabases/Week5/MidModuleAssigment/DataBases/Course_Days_Offered.txt"
+INTO TABLE Database_Course.Course_Days_Offered
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+/*The data is loaded via a txt file into the table Course_Module_Information inside the database Database_Course*/
+load data LOCAL 
+infile "C:/Users/esmer/OneDrive/Desktop/Liverpool/InformationDatabases/Week5/MidModuleAssigment/DataBases/Course_Module_Information.txt"
+INTO TABLE Database_Course.Course_Module_Information
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+/******************************************************************************
+Finish ---- Course Database is created and its tables
+********************************************************************************/
+
+
+/******************************************************************************
+Beginning ---- Student Database is created and its tables
+********************************************************************************/
+
+/*Students database is created*/
+create database students_database;
+
+/*The structure of the table is created*/
+create TABLE students_database.students_personal_Information (  
+    Student_ID  numeric(5)	,
+    First_Name  CHARACTER(32),
+    Last_Name	CHARACTER(32),
+    Semester	numeric(3),
+    Email	    varchar(32),
+    Pass_word   varchar(32) , 
+    DoB	        date,
+    Age	        numeric(3)
+);
+
+/*The data is loaded via a txt file into the table students_personal_Information inside the database students_database*/
+load data LOCAL 
+infile "C:/Users/esmer/OneDrive/Desktop/Liverpool/InformationDatabases/Week5/MidModuleAssigment/DataBases/students_personal_Information.txt"
+INTO TABLE students_database.students_personal_Information
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+/*Table Enroll_Students_Information inside students_database is created with its characteristics */
+
+create TABLE students_database.Enroll_Students_Information (  
+    Student_ID  numeric(5)	,
+    Course      CHARACTER(32)
+);
+
+/*The data is loaded via a txt file into the table enroll_students_Information inside the database students_database*/
+load data LOCAL 
+infile "C:/Users/esmer/OneDrive/Desktop/Liverpool/InformationDatabases/Week5/MidModuleAssigment/DataBases/enroll_students_Information.txt"
+INTO TABLE students_database.enroll_students_Information
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+/******************************************************************************
+Finish ---- Student Database is created and its tables
+********************************************************************************/
+
+
+/******************************************************************************
+Beginning ---- Teachers Database is created and its tables
+********************************************************************************/
+
+/*Teachers database is created*/
+create database teachers_database;
+
+create TABLE teachers_database.teachers_personal_Information (  
+Teachers_ID numeric(5),
+First_Name	CHARACTER(32),
+Last_Name	CHARACTER(32),
+Email	VARCHAR(32),
+DoB	date);
+
+
+load data LOCAL 
+infile "C:/Users/esmer/OneDrive/Desktop/Liverpool/InformationDatabases/Week5/MidModuleAssigment/DataBases/teachers_personal_Information.txt"
+INTO TABLE teachers_database.teachers_personal_Information
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+
+create TABLE teachers_database. Teachers_Subject_Information (  
+Teachers_ID numeric(5),
+Assigned_Course  CHARACTER(32)
+);
+
+
+load data LOCAL 
+infile "C:/Users/esmer/OneDrive/Desktop/Liverpool/InformationDatabases/Week5/MidModuleAssigment/DataBases/Teachers_Subject_Information.txt"
+INTO TABLE teachers_database.Teachers_Subject_Information
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+
+create TABLE teachers_database.Teachers_Phone_Information(  
+Teachers_ID numeric(5),
+Phone       VARCHAR(32),
+Type_Phone  CHARACTER(32)
+);
+
+load data LOCAL 
+infile "C:/Users/esmer/OneDrive/Desktop/Liverpool/InformationDatabases/Week5/MidModuleAssigment/DataBases/Teachers_Phone_Information.txt"
+INTO TABLE teachers_database.Teachers_Phone_Information
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+/******************************************************************************
+Finish  ---- Teachers Database is created and its tables
+********************************************************************************/
+
+
+/******************************************************************************
+Beginning ---- Admin Database is created and its tables
+********************************************************************************/
+
+create database admin_database;
+
+create TABLE admin_database.Admin_Personal_Information(  
+Admin_ID numeric(3),	
+First_Name	CHARACTER(32),
+Last_Name	CHARACTER(32),
+Pass_word VARCHAR(32)
+);
+
+
+load data LOCAL 
+infile "C:/Users/esmer/OneDrive/Desktop/Liverpool/InformationDatabases/Week5/MidModuleAssigment/DataBases/Admin_Personal_Information.txt"
+INTO TABLE admin_database.Admin_Personal_Information
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+
+/******************************************************************************
+Finish ---- Admin Database is created and its tables
+********************************************************************************/
+
+/********************************************************************************
+Example to entry Data to the Tables of the Databases
+*********************************************************************************/

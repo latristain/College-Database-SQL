@@ -1,4 +1,4 @@
-# StudentsDatabaseSQL
+# College Database using SQL
 
 ## Table of Contents
 1. [General Info](#general-info)
